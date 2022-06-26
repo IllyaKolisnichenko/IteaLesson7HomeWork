@@ -90,23 +90,27 @@ void Vector::swap(int firstElement, int secondElement)
 void Vector::resize(int size)
 { 
     if (size >= size_) {
-        int* tempArr = new int[size_+size] {};
+       
+        int* tempArr = new int[size] {};
+        for (int i{}; i < size-(size-size_); i++) {
+            tempArr[i] = vectorOfData_[i];
+        }
+        delete vectorOfData_;
+        vectorOfData_ = tempArr;
+        size_ += (size - size_);
+         
+       
+    }
+    if (size<size_){
+        size_ -= (size_ - size);
+        int* tempArr = new int[size_] {};
         for (int i{}; i < size_; i++) {
             tempArr[i] = vectorOfData_[i];
         }
         delete vectorOfData_;
         vectorOfData_ = tempArr;
-         
-        size_ += size;
-    }
-    if (size<size_){
-        int* tempArr = new int[size] {};
-        for (int i{}; i < size; i++) {
-            tempArr[i] = vectorOfData_[i];
-        }
-        delete vectorOfData_;
-        vectorOfData_ = tempArr;
-        size_ = size_ - (size_ - size);
+        
+        
         
     }
 }
@@ -132,15 +136,16 @@ void Vector::printVector()
 
 void Vector::pushBack(int value)
 {
-    int* tempArr = new int[size_ + 1];
+    size_++;
+    Vector::resize(size_);
+    vectorOfData_[size_ - 1] = value;
+    /*int* tempArr = new int[size_ + 1];
     for (int i{}; i < size_; i++) {
         tempArr[i] = vectorOfData_[i];
     }
     tempArr[size_] = value;
     delete vectorOfData_;
-    vectorOfData_ = tempArr;
-    
-    size_++;
+    vectorOfData_ = tempArr;*/
 
 }
 void Vector::append(int value, int position)
