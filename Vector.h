@@ -8,7 +8,7 @@ public:
 	~Vector();
 	int max();
 	int min();
-	void sort();
+    void sort();
 	int size();
 	void clear();
 	void swap(int firstElement, int secondElement);
@@ -18,8 +18,8 @@ public:
 	void printVector();
 	void pushBack(int value);
 	void append(int value, int position);
+    int* vectorOfData_;
 
 private:
-	int* vectorOfData_;
 	int size_{};
 };

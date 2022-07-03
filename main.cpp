@@ -5,6 +5,12 @@
 void testVector() {
 	Vector vector{ 20 };
 
+	std::srand(time(nullptr));
+	for (int i{}; i < vector.size(); i++)
+	{
+		*(vector.vectorOfData_ + i) = 1 + std::rand() % 100; //initializing vector, random nubber from 1 to 100
+	}
+
 	vector.printVector();
 
 	std::cout << "Maximun number is " << vector.max() << std::endl;

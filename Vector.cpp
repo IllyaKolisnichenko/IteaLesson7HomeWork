@@ -4,13 +4,8 @@
 
 Vector::Vector(int size)
 {
-	std::srand(time(nullptr));
 	size_ = size;
 	vectorOfData_ = new int[size_ * 2]{}; //reserve twice as much memory
-	for (int i{}; i < size_; i++)
-	{
-		*(vectorOfData_ + i) = 1 + std::rand() % 100; //initializing vector, random nubber from 1 to 100
-	}
 }
 
 Vector::~Vector()
@@ -65,7 +60,9 @@ void Vector::swap(int firstElement, int secondElement)
 		std::cout << "Elements cannot be swapped" << std::endl;
 		return;
 	}
-	std::swap(*(vectorOfData_ + firstElement - 1), *(vectorOfData_ + secondElement - 1));
+	int tempElement = *(vectorOfData_ + firstElement - 1);
+	*(vectorOfData_ + firstElement - 1) = *(vectorOfData_ + secondElement - 1);
+	*(vectorOfData_ + secondElement - 1) = tempElement;
 }
 
 void Vector::resize(int size)
@@ -84,7 +81,7 @@ void Vector::resize(int size)
 			}
 		}
 
-		Vector::~Vector();
+		delete[] vectorOfData_;
 		size_ = size;                     //new size of vector
 		vectorOfData_ = new int[size_ * 2]; //reserve twice as much memory
 
@@ -109,7 +106,7 @@ int Vector::back()
 
 void Vector::printVector()
 {
-	for (int i{ 0 }; i < size_; i++)
+	for (int i{}; i < size_; i++)
 	{
 		std::cout << *(vectorOfData_ + i) << " ";
 	}
@@ -119,7 +116,7 @@ void Vector::printVector()
 void Vector::pushBack(int value)
 {
 	size_++;
-	Vector::resize(size_);
+	resize(size_);
 	*(vectorOfData_ + size_ - 1) = value;
 }
 void Vector::append(int value, int position)
