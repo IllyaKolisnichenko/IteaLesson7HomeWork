@@ -1,0 +1,15 @@
+﻿"Project56.exe" (Win32). Загружено "C:\Users\User\source\repos\Project56\x64\Debug\Project56.exe". Символы загружены.
+"Project56.exe" (Win32). Загружено "C:\Windows\System32\ntdll.dll". 
+"Project56.exe" (Win32). Загружено "C:\Windows\System32\kernel32.dll". 
+"Project56.exe" (Win32). Загружено "C:\Windows\System32\KernelBase.dll". 
+"Project56.exe" (Win32). Загружено "C:\Windows\System32\msvcp140d.dll". 
+"Project56.exe" (Win32). Загружено "C:\Windows\System32\vcruntime140d.dll". 
+"Project56.exe" (Win32). Загружено "C:\Windows\System32\vcruntime140_1d.dll". 
+"Project56.exe" (Win32). Загружено "C:\Windows\System32\ucrtbased.dll". 
+Поток 0xaf08 завершился с кодом 0 (0x0).
+"Project56.exe" (Win32). Загружено "C:\Windows\System32\kernel.appcore.dll". 
+"Project56.exe" (Win32). Загружено "C:\Windows\System32\msvcrt.dll". 
+"Project56.exe" (Win32). Загружено "C:\Windows\System32\rpcrt4.dll". 
+Поток 0x5e08 завершился с кодом 0 (0x0).
+Поток 0x6f90 завершился с кодом 0 (0x0).
+Программа "[40992] Project56.exe" завершилась с кодом 0 (0x0).
