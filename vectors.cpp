@@ -1,10 +1,10 @@
 ﻿#include <iostream>
-#include "vector.h"
+#include "vectors.h"
 
 Vector::Vector(int size)
 {
 	size_ = size;
-	vectorOfData_ = new int [size]{};
+	vectorOfData_ = new int [size] {};
 }
 
 Vector::~Vector()
@@ -36,16 +36,30 @@ void Vector::sort()
 
 void Vector::max()
 {
-	sort();
-	
-	std::cout << vectorOfData_[size_ - 1] << std::endl;
+	int max = vectorOfData_[0];
+
+	for (int it = 0; it < size_; it++)
+	{
+		if (vectorOfData_[it] > max)
+		{
+			max = vectorOfData_[it];
+		}
+	}
+	std::cout << max;
 }
 
 void Vector::min()
 {
-	sort();
+	int min = vectorOfData_[0];
 
-	std::cout << vectorOfData_[0] << std::endl;
+	for (int it = 0; it < size_; it++)
+	{
+		if (vectorOfData_[it] < min)
+		{
+			min = vectorOfData_[it];
+		}
+	}
+	std::cout << min;
 }
 
 void Vector::swap(int firstElement, int secondElement)
@@ -63,9 +77,9 @@ void Vector::swap(int firstElement, int secondElement)
 void Vector::resize(int size)
 {
 	int* tempVector = new int[size];
-	if (size>=size_)
+	if (size >= size_)
 	{
-		for (int i = 0; i < size-(size-size_); i++)
+		for (int i = 0; i < size - (size - size_); i++)
 		{
 			tempVector[i] = vectorOfData_[i];
 		}
@@ -112,16 +126,16 @@ void Vector::pushBack(int value)
 }
 void Vector::append(int value, int position)
 {
-	//empty
+
 }
 
 void Vector::size()
 {
-	std::cout<< sizeof(vectorOfData_)<<std::endl;
+	std::cout << sizeof(vectorOfData_) << std::endl;
 }
 
 void Vector::clear()
 {
 	delete vectorOfData_;
-	int* vectorOfData = new int[size_];
+	int* vectorOfData_ = new int[size_];
 }

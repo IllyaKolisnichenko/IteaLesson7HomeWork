@@ -1,4 +1,4 @@
-#include "vector.h"
+#include "vectors.h"
 #include <iostream>
 
 
@@ -7,17 +7,12 @@ int main()
 	std::cout << "Enter the numbers" << std::endl;
 	Vector vector(5);
 	vector.init();
+	std::cout << std::endl;
 	vector.printVector();
-	vector.sort();
-	vector.printVector();
-	vector.min();
+	std::cout << std::endl;
 	vector.max();
-	vector.size();
-	vector.swap(1, 2);
-	vector.printVector();
-	vector.printVector();
-	vector.back();
-	vector.front();
+	std::cout << std::endl;
+	vector.min();
 
 	return 0;
 }

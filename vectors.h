@@ -16,9 +16,8 @@ public:
 	void printVector();
 	void pushBack(int value);
 	void append(int value, int position);
-	
+
 private:
 	int* vectorOfData_;
 	int size_{};
 };
-
