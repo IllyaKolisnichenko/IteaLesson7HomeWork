@@ -1,11 +1,18 @@
-#include "Vector.h"
+#include "vectors.h"
+#include <iostream>
 
-void testVector(){
-    Vector vector{10};
-    // test your vector
-}
 
 int main()
 {
-    testVector();
+	std::cout << "Enter the numbers" << std::endl;
+	Vector vector(5);
+	vector.init();
+	std::cout << std::endl;
+	vector.printVector();
+	std::cout << std::endl;
+	vector.max();
+	std::cout << std::endl;
+	vector.min();
+
+	return 0;
 }
